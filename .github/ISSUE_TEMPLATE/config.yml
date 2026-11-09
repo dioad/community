@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/dioad/community/security/advisories/new
+    about: Report it privately. Don't open a public issue.
+  - name: connect getting started
+    url: https://connect.dioad.dev
+    about: Install and set up the agent.
+  - name: connect documentation
+    url: https://dioad.github.io/connect/
+    about: Tunnel types, configuration and reference.

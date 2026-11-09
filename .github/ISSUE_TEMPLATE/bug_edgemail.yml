@@ -1,0 +1,48 @@
+name: edgemail bug or delivery problem
+description: Something in Dioad edgemail isn't working, or mail isn't arriving or sending.
+labels: ["edgemail", "bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        edgemail is alpha and this is a small independent project, so replies are best effort.
+        Known limits are in the pinned "Known issues and status" issue. Gmail putting our test mail in spam is already known.
+        Never paste passwords, tokens, private keys or the text of private email. Redact them.
+  - type: dropdown
+    id: area
+    attributes:
+      label: What's wrong
+      options: [Setup or sign-in, Receiving mail, Sending mail, Mail not delivered or in spam, Web UI, Something else]
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What did you do, what did you expect and what happened instead?
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Image version
+      description: The `dioad/edgemail` tag you run, for example `0.83.12` or `latest`.
+    validations:
+      required: true
+  - type: input
+    id: domain
+    attributes:
+      label: Your mail domain
+      description: Shown in the management console. It's a subdomain of dioad.dev.
+  - type: textarea
+    id: headers
+    attributes:
+      label: Message headers
+      description: For delivery problems, the `Authentication-Results` and `Received` headers of a message, or the bounce text. Remove anything private.
+      render: text
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: Output of `docker logs dioad-edgemail`, trimmed to the relevant lines.
+      render: shell

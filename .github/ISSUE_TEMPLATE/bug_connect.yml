@@ -1,0 +1,41 @@
+name: connect bug
+description: Something in Dioad connect isn't working.
+labels: ["connect", "bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        connect is in beta and this is a small independent project, so replies are best effort.
+        Never paste passwords, tokens or private keys. Redact them.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What did you do, what did you expect and what happened instead?
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Output of `connect version`, or your Docker image tag.
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: How you run it
+      options: [macOS (Homebrew), Docker, Linux package, Linux tarball, Windows, Other]
+    validations:
+      required: true
+  - type: input
+    id: tunnel
+    attributes:
+      label: Tunnel type
+      description: For example HTTP reverse proxy, TCP, file share or SOCKS5.
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs and config
+      description: Relevant agent log lines and your config with secrets removed. `connect agent status` output helps.
+      render: shell

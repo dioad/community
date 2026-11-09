@@ -1,0 +1,22 @@
+name: Idea or request
+description: Suggest something for connect or edgemail.
+labels: ["idea"]
+body:
+  - type: dropdown
+    id: product
+    attributes:
+      label: Product
+      options: [connect, edgemail, Both or neither]
+    validations:
+      required: true
+  - type: textarea
+    id: need
+    attributes:
+      label: What are you trying to do?
+      description: Describe the problem first. Your idea for a solution can come after.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would help
